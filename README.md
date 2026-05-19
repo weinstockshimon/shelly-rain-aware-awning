@@ -123,11 +123,10 @@ Example ntfy topic placeholder:
 YOUR_NTFY_TOPIC
 ```
 
-## Files
+## Code
 
 - `shelly-rain-filter.js`: Shelly script for rain confirmation, dry confirmation, cover control, logging, and notifications
 - `google-apps-script.js`: Google Apps Script web app that receives Shelly logs and writes them to daily sheet tabs
-- `SUBMISSION_CHECKLIST.md`: checklist for preparing the final Shelly Challenge submission
 
 ## Photos
 
@@ -204,24 +203,10 @@ var NTFY_TOPIC = "YOUR_NTFY_TOPIC";
 10. Test with a short rain trigger. It should log `FALSE_POSITIVE_SHORT_TRIGGER` and should not move the cover.
 11. Test with a sustained rain trigger. After 70 seconds, it should open the cover and log `RAIN_CONFIRMED_OPEN_COMMAND`.
 
-## Demo Story
-
-The demo shows:
+## Example Test Flow
 
 1. A short false trigger is ignored.
 2. A sustained rain signal opens the cover after confirmation.
 3. A dry signal closes the cover after a 3-minute delay.
 4. Google Sheets receives every decision.
 5. ntfy sends matching phone notifications.
-
-## Privacy Notes
-
-Before publishing this project, replace all private values:
-
-```text
-YOUR_GOOGLE_SCRIPT_WEB_APP_URL
-YOUR_NTFY_TOPIC
-YOUR_DEVICE_NAME
-```
-
-Do not publish real addresses, private webhook URLs, or personal notification topics.
